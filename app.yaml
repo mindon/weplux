@@ -4,11 +4,14 @@ runtime: go
 api_version: go1
 
 handlers:
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+
 - url: /(.*\.(htm|html|js|css|txt|png|webp|jpeg|jpg|gif|ico|obj|ply))
   static_files: static/\1
   upload: static/.*
 
-handlers:
 - url: /(.*)/
   static_files: static/\1/index.html
   upload: static/\1/index.html
