@@ -1,0 +1,18 @@
+application: weplux
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /(.*\.(htm|html|js|css|txt))
+  static_files: static/\1
+  upload: static/.*
+  expiration: 7d
+
+- url: /(.*\.(png|webp|jpeg|jpg|gif|ico|obj|ply))
+  static_files: static/\1
+  upload: static/.*
+  expiration: 30d
+
+- url: .*
+  script: _go_app
