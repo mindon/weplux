@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-  http.HandleFunc("/hello", homeHandler)
+  http.HandleFunc("/", homeHandler)
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
